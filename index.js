@@ -24,7 +24,7 @@ io.on('connection', function(socket) {
         let time = new Date();
         let t = time.getTime();
         socket.send(t);
-    });
+    }, 1000);
     
     /* socket.on('disconnect', function() {
         console.log('User disconnected');
