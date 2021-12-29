@@ -33,4 +33,23 @@ Answer:
     * WebSocket does not need STUN/TURN server to establish a connection.
 
 
+<!-- Socket IO Pre-Defined Events -->
+
+    * Server Side:
+        1- Connect
+        2- Disconnect
+        3- Message
+        4- Reconnect
+        5- Ping
+        6- Join
+        7- Leave
+
+    * Client Side:
+        1- Connect
+        2- Connect_Error
+        3- Connect_Timeout
+        4- Reconnect
+
+
+
 For more information go to https://socket.io/
