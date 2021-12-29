@@ -13,9 +13,16 @@ const io = new Server(expressServer);
 
 io.on('connection', function(socket) {
     console.log('New user connected');
-    socket.on('disconnect', function() {
+
+    // Send data from server to client
+    
+    setTimeout(function() {
+        socket.send("Hello from server");
+    }, 5000);
+    
+    /* socket.on('disconnect', function() {
         console.log('User disconnected');
-    });
+    }); */
 });
 
 

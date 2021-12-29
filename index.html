@@ -14,6 +14,15 @@
     
     <script>
         let socket = io();
+
+
+        // Receive data from server
+        
+        socket.on('message', function(data) {
+            document.write(data);
+            console.log(data);
+        });
+
     </script>
 </body>
 </html>

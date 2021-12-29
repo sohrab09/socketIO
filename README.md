@@ -53,4 +53,4 @@ Socket IO Pre-Defined Events
 
 
 
-For more information go to target: https://socket.io/
+For more information go to https://socket.io/
