@@ -15,10 +15,16 @@ io.on('connection', function(socket) {
     console.log('New user connected');
 
     // Send data from server to client
-    
-    setTimeout(function() {
-        socket.send("Hello from server");
-    }, 5000);
+
+    // setTimeout(function() {
+    //     socket.send("Hello from server");
+    // }, 5000);
+
+    setInterval(function() {
+        let time = new Date();
+        let t = time.getTime();
+        socket.send(t);
+    });
     
     /* socket.on('disconnect', function() {
         console.log('User disconnected');
