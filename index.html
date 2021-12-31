@@ -23,7 +23,15 @@
         //     console.log(data);
         // });
 
-        socket.on('message', function(data) {
+        // socket.on('message', function(data) {
+        //     document.getElementById('time').innerHTML = ""
+        //     document.getElementById('time').innerHTML = data
+        // }); 
+
+
+        // Receive data from custom event handler
+
+        socket.on('myTime', function(data) {                        // "myTime" is a custom event handler //
             document.getElementById('time').innerHTML = ""
             document.getElementById('time').innerHTML = data
         });
