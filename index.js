@@ -37,13 +37,23 @@ io.on("connection", function (socket) {
         }); 
     */
 
-        // Creating Custom Events
+  // Creating Custom Events
 
-        setInterval(function() {
-            let time = new Date();
-            let t = time.getTime();
-            socket.emit("myTime", t);
-        }, 100);
+  /*
+          setInterval(function() {
+              let time = new Date();
+              let t = time.getTime();
+              socket.emit("myTime", t);
+          }, 100);
+    */
+
+          // Broadcast to all clients
+
+          io.on("connection", function(socket) {
+              io.sockets.emit("MyBroadcast", "Hello from server");
+          });
+          
+
 });
 
 // Index.html file connection

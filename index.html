@@ -9,6 +9,7 @@
 <body>
     <h1 id="time"></h1>
 
+    <h1 id="msg"></h1>
 
     <script src="/socket.io/socket.io.js"></script>
     
@@ -34,6 +35,11 @@
         socket.on('myTime', function(data) {                        // "myTime" is a custom event handler //
             document.getElementById('time').innerHTML = ""
             document.getElementById('time').innerHTML = data
+        });
+
+        socket.on("MyBroadcast", function(data) {
+            console.log(data)
+            document.getElementById("msg").innerHTML = data;
         });
 
     </script>
