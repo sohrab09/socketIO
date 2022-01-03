@@ -29,5 +29,12 @@ Answer:
     * WebRTC needs STUN/TURN server to establish a connection.
     * WebSocket does not need STUN/TURN server to establish a connection.
 
+    => NameSpace
+
+    * Assigning different endpoints or paths.
+    * Minimize the number of TCP connections.
+    * Separation between communication channels.
+    * NameSpaces are created on the server side.
+    * Joined by clients by sending a request to the server.
 
 For more information go to https://socket.io/

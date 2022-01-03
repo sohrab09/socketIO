@@ -1,18 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WebRTC</title>
 </head>
+
 <body>
     <h1 id="time"></h1>
 
     <h1 id="msg"></h1>
 
     <script src="/socket.io/socket.io.js"></script>
-    
+
     <script>
         let socket = io();
 
@@ -32,16 +34,27 @@
 
         // Receive data from custom event handler
 
-        socket.on('myTime', function(data) {                        // "myTime" is a custom event handler //
-            document.getElementById('time').innerHTML = ""
-            document.getElementById('time').innerHTML = data
-        });
+        /*     
+             socket.on('myTime', function (data) {                        // "myTime" is a custom event handler //
+                 document.getElementById('time').innerHTML = ""
+                 document.getElementById('time').innerHTML = data
+             });
+     
+             socket.on("MyBroadcast", function (data) {
+                 console.log(data)
+                 document.getElementById("msg").innerHTML = data;
+             });
+     
+             */
 
-        socket.on("MyBroadcast", function(data) {
-            console.log(data)
+        //Get Data From NameSpace Server
+
+        let socket = io("/buy");
+        socket.on("MyEvent", function (data) {
             document.getElementById("msg").innerHTML = data;
-        });
+        })
 
     </script>
 </body>
+
 </html>

@@ -47,14 +47,26 @@ io.on("connection", function (socket) {
           }, 100);
     */
 
-          // Broadcast to all clients
-
-          io.on("connection", function(socket) {
-              io.sockets.emit("MyBroadcast", "Hello from server");
-          });
-          
-
+  // Broadcast to all clients
+  /*
+        io.on("connection", function(socket) {
+            io.sockets.emit("MyBroadcast", "Hello from server");
+        });
+    */
 });
+
+ //NameSpace Server
+
+ let buyNsp = io.of("/buy");
+ buyNsp.on("connection", function (socket) {
+   buyNsp.emit("MyEvent", "Hello from buy namespace");
+ });
+
+ 
+ let sellNsp = io.of("/sell");
+ sellNsp.on("connection", function (socket) {
+   sellNsp.emit("MyEvent", "Hello from sell namespace");
+ })
 
 // Index.html file connection
 
